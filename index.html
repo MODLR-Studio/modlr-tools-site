@@ -6,22 +6,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MØDLR Tools — Coming Soon</title>
   <link rel="icon" href="/favicon.ico">
+
   <style>
     :root { --bg:#0d0d0d; --fg:#ffffff; --muted:#a9a9a9; --sub:#aaaaaa; }
     html, body { height:100%; }
+
     body {
       margin:0; background:var(--bg); color:var(--fg);
       font:16px/1.45 Overpass, Arial, sans-serif;
       display:flex; align-items:center; justify-content:center; text-align:center;
       letter-spacing:.02em;
     }
+
     main { padding:2rem; }
     h1 { font-size:2.25rem; font-weight:700; margin:0 0 .4rem; }
     p  { margin:0; color:var(--muted); }
-    .signup-wrap { margin-top:1.5rem; display:flex; justify-content:center; }
-    /* constrain the widget without messing with Zoho’s internals */
-    .signup-wrap > * { max-width:260px; }
     footer { margin-top:2rem; font-size:.9rem; color:var(--sub); }
+
+    /* Signup form wrapper */
+    .signup-wrap {
+      margin-top:2rem;            /* spacing tweak */
+      margin-bottom:.5rem;        /* spacing tweak */
+      display:flex; justify-content:center;
+    }
+    .signup-wrap > * { max-width:260px; }
+
+    /* ------------------ Quick CSS polish for Zoho widget ------------------ */
+    /* Make the Zoho card blend into the dark page */
+    #customForm .quick_form_2_css[name="SIGNUP_BODY"]{
+      border:0 !important;
+      background:transparent !important;
+    }
+    /* Hide Zoho’s built-in title bar */
+    #SIGNUP_HEADING{ display:none !important; }
+
+    /* Input styling (dark field, subtle border) */
+    #zcampaignOptinForm input[type="text"]{
+      background:#141414 !important;
+      color:#eaeaea !important;
+      border:1px solid #2a2a2a !important;
+      border-radius:8px !important;
+      outline:none !important;
+    }
+
+    /* Button styling (rounded, bold) */
+    #zcWebOptin{
+      background:#ff6161 !important;   /* change later when brand set */
+      border-radius:8px !important;
+      box-shadow:none !important;
+    }
+
+    /* Slightly tighter widget on very small screens */
+    @media (max-width:480px){
+      .signup-wrap > * { max-width:240px; }
+    }
+
+    /* Keep Zoho’s internal layout stable */
+    #customForm.quick_form_2_css * {
+      -webkit-box-sizing: border-box !important;
+      -moz-box-sizing: border-box !important;
+      box-sizing: border-box !important;
+      overflow-wrap: break-word;
+    }
+    @media only screen and (max-width: 200px) {
+      .quick_form_2_css[name="SIGNUP_BODY"] { width: 100% !important; min-width: 100% !important; margin: 0 auto !important; padding: 0 !important; }
+    }
+    @media screen and (min-width: 320px) and (max-width: 580px) and (orientation: portrait) {
+      .quick_form_2_css[name="SIGNUP_BODY"] { max-width: 300px !important; margin: 0 auto !important; padding: 0 !important; }
+    }
+    @media only screen and (max-device-width: 1024px) {
+      .quick_form_2_css[name="SIGNUP_BODY"] { max-width: 500px !important; margin: 0 auto !important; }
+    }
+    @media only screen and (max-device-width: 1024px) and (orientation: landscape) {
+      .quick_form_2_css[name="SIGNUP_BODY"] { max-width: 700px !important; margin: 0 auto !important; }
+    }
+    @media screen and (min-width: 475px) and (max-width: 980px) and (orientation: landscape) {
+      .quick_form_2_css[name="SIGNUP_BODY"] { max-width: 400px !important; margin: 0 auto !important; padding: 0 !important; }
+    }
+    /* --------------------------------------------------------------------- */
   </style>
 </head>
 <body>
@@ -30,22 +92,13 @@
     <p>Coming Soon</p>
 
     <div class="signup-wrap">
-      <!-- Zoho Campaigns Web-Optin Form: do not edit hidden inputs -->
+      <!-- Zoho Campaigns Web-Optin Form (do not edit hidden inputs) -->
       <script type="text/javascript" src="https://zcmp-user.maillist-manage.com.au/js/optin.min.js" onload="setupSF('sf3z809cb4f4ba55e2cb1ec05879457468cd660954486a292bbf32647507f29a521d','ZCFORMVIEW',false,'light',false,'0')"></script>
       <script type="text/javascript">
         function runOnFormSubmit_sf3z809cb4f4ba55e2cb1ec05879457468cd660954486a292bbf32647507f29a521d(th){
-          /* hook available if you ever need it */
+          /* hook available if needed */
         };
       </script>
-
-      <style>
-        #customForm.quick_form_2_css * { -webkit-box-sizing: border-box !important; -moz-box-sizing: border-box !important; box-sizing: border-box !important; overflow-wrap: break-word }
-        @media only screen and (max-width: 200px) {.quick_form_2_css[name="SIGNUP_BODY"] { width: 100% !important; min-width: 100% !important; margin: 0 auto !important; padding: 0 !important } }
-        @media screen and (min-width: 320px) and (max-width: 580px) and (orientation: portrait) {.quick_form_2_css[name="SIGNUP_BODY"] { max-width: 300px !important; margin: 0 auto !important; padding: 0 !important } }
-        @media only screen and (max-device-width: 1024px) {.quick_form_2_css[name="SIGNUP_BODY"] { max-width: 500px !important; margin: 0 auto !important } }
-        @media only screen and (max-device-width: 1024px) and (orientation: landscape) {.quick_form_2_css[name="SIGNUP_BODY"] { max-width: 700px !important; margin: 0 auto !important } }
-        @media screen and (min-width: 475px) and (max-width: 980px) and (orientation: landscape) {.quick_form_2_css[name="SIGNUP_BODY"] { max-width: 400px !important; margin: 0 auto !important; padding: 0 !important } }
-      </style>
 
       <div id="sf3z809cb4f4ba55e2cb1ec05879457468cd660954486a292bbf32647507f29a521d" data-type="signupform" style="opacity:1;">
         <div id="customForm">
@@ -76,7 +129,7 @@
                 </div>
 
                 <div style="position:relative; width:113px; height:30px; margin:20px 0 15px; display:inline-block">
-                  <input type="button" style="text-align:center; width:100%; height:100%; z-index:5; border:0; color:#fff; border-radius:2px; cursor:pointer; outline:none; font-size:14px; background:#ff6161" name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin" value="Join Now">
+                  <input type="button" style="text-align:center; width:100%; height:100%; z-index:5; border:0; color:#fff; border-radius:8px; cursor:pointer; outline:none; font-size:14px; background:#ff6161" name="SIGNUP_SUBMIT_BUTTON" id="zcWebOptin" value="Join Now">
                 </div>
 
                 <input type="hidden" id="fieldBorder" value="">
@@ -105,11 +158,12 @@
         </div>
         <img src="https://zcmp-user.maillist-manage.com.au/images/spacer.gif" id="refImage" onload="referenceSetter(this)" style="display:none;">
       </div>
+
       <input type="hidden" id="signupFormType" value="QuickForm_Vertical">
       <div id="zcOptinOverLay" oncontextmenu="return false" style="display:none;text-align:center; background:#000; opacity:.5; z-index:100; position:fixed; width:100%; top:0; left:0; height:988px;"></div>
       <div id="zcOptinSuccessPopup" style="display:none;z-index:9999;width:800px; height:40%;top:84px;position:fixed; left:26%;background:#FFFFFF;border:1px solid #E6E6E6; box-shadow:0 1px 10px #424242;padding:35px;">
         <span style="position:absolute;top:-16px;right:-14px;z-index:99999;cursor:pointer;" id="closeSuccess">
-          <img src="https://zcmp-user.maillist-manage.com.au/images/videoclose.png">
+          <img src="https://zcmp-user.maillist-manage.com.au/images/videoclose.png" alt="close">
         </span>
         <div id="zcOptinSuccessPanel"></div>
       </div>
